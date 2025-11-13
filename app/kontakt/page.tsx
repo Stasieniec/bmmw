@@ -1,0 +1,154 @@
+'use client';
+
+import { useState } from 'react';
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Form submission will be implemented later
+    alert('Formularz zostanie wkrótce połączony z systemem kontaktowym.');
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight animate-fadeIn">
+            Kontakt
+          </h1>
+          <p className="text-xl text-gray-600 animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+            Skontaktuj się z nami
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div className="space-y-8 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Informacje kontaktowe</h2>
+              <div className="space-y-4 text-gray-700">
+                <div>
+                  <h3 className="font-semibold mb-1">Email</h3>
+                  <a href="mailto:kontakt@bmmw.pl" className="text-gray-600 hover:text-black transition-colors">
+                    kontakt@bmmw.pl
+                  </a>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Telefon</h3>
+                  <a href="tel:+48123456789" className="text-gray-600 hover:text-black transition-colors">
+                    +48 123 456 789
+                  </a>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Lokalizacja</h3>
+                  <p className="text-gray-600">
+                    Warszawa, Polska
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8">
+              <h3 className="font-semibold mb-3">Współpraca</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Jesteśmy otwarci na współpracę przy projektach filmowych, dokumentalnych
+                i fabularnych. Skontaktuj się z nami, aby omówić szczegóły.
+              </p>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="animate-fadeIn" style={{ animationDelay: '0.5s' }}>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  Imię i nazwisko
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  Temat
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  Wiadomość
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-black text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              >
+                Wyślij wiadomość
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
