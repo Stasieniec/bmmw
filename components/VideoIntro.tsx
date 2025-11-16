@@ -140,6 +140,7 @@ export default function VideoIntro() {
         ref={videoRef}
         className="w-full h-full object-cover cursor-pointer"
         playsInline
+        muted
         preload="auto"
         onEnded={handleEnd}
         onClick={handleSkip}
