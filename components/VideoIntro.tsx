@@ -144,7 +144,8 @@ export default function VideoIntro() {
         onEnded={handleEnd}
         onClick={handleSkip}
       >
-        <source src="/openening_12_seconds.mp4" type="video/mp4" />
+        {/* TODO: Replace with your CDN URL after uploading the video */}
+        <source src="https://YOUR-CDN-URL.com/openening_12_seconds.mp4" type="video/mp4" />
         Twoja przeglądarka nie obsługuje odtwarzania wideo.
       </video>
 
