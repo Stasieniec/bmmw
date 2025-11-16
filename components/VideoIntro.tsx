@@ -144,7 +144,7 @@ export default function VideoIntro() {
         onEnded={handleEnd}
         onClick={handleSkip}
       >
-        <source src="/openening_12_seconds.mp4" type="video/mp4" />
+        <source src="/openening_12_seconds_new.mp4" type="video/mp4" />
         Twoja przeglądarka nie obsługuje odtwarzania wideo.
       </video>
 
