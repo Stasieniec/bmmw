@@ -1,0 +1,23 @@
+{
+  "name": "BMMW Films - Niezależne Studio Filmowe",
+  "short_name": "BMMW Films",
+  "description": "Warszawskie niezależne studio filmowe. Believe, Make Movies, Win.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/BMMW_black_transparent.png",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "/BMMW_logo_white_transparent.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
+
